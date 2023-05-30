@@ -1,8 +1,13 @@
-const Button = ({ title = "", onClick }) => {
+const Button = ({ onClick, title = "", color = "" }) => {
+  const handleClick = () => {
+    if (onClick) onClick(title);
+  };
+
   return (
     <button
-      onClick={onClick}
-      className="rounded bg-purple-700 text-white w-full h-12"
+      onClick={handleClick}
+      className="rounded bg-blue-300 text-white w-12 h-12 hover:scale-110"
+      style={{ backgroundColor: color }}
     >
       {title}
     </button>
